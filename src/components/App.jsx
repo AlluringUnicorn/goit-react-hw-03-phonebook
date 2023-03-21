@@ -69,6 +69,8 @@ class App extends Component {
     const { contacts, filter } = this.state;
 
     const normalizedFilter = filter.toLowerCase();
+    
+    console.log(contacts);
 
     const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
@@ -82,6 +84,7 @@ class App extends Component {
         <Filter onChange={this.handleFilterChange} value={filter}></Filter>
         <ContactList
           contacts={filteredContacts}
+    
           handleDelete={this.handleDelete}
         ></ContactList>
       </div>
