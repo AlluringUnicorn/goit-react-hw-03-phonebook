@@ -27,7 +27,9 @@ class App extends Component {
     console.log('Component did mount');
 
     const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-    this.setState({ contacts: savedContacts });
+    if (savedContacts) {
+      this.setState({ contacts: savedContacts });
+    }
   }
 
   createUser = data => {
